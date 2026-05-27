@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/bg_dialog_rounded">
+
+    <!-- Header -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tambah Aktivitas"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#0F172A"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Masukkan detail aktivitas baru"
+        android:textSize="13sp"
+        android:textColor="#64748B"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Input Nama Aktivitas -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama Aktivitas"
+        android:textSize="14sp"
+        android:textColor="#0F172A"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/etMapel"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@drawable/bg_input_field"
+        android:hint="Contoh: Matematika, Meeting, Olahraga"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textSize="14sp"
+        android:textColor="#0F172A"
+        android:inputType="text"
+        android:layout_marginBottom="16dp"
+        android:maxLines="1" />
+
+    <!-- Pilih Hari (Spinner) -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hari"
+        android:textSize="14sp"
+        android:textColor="#0F172A"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginBottom="8dp" />
+
+    <Spinner
+        android:id="@+id/spinnerHari"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@drawable/bg_input_field"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:spinnerMode="dropdown"
+        android:popupBackground="#FFFFFF"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Input Waktu -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Waktu Mulai"
+        android:textSize="14sp"
+        android:textColor="#0F172A"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/etWaktu"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@drawable/bg_input_field"
+        android:hint="Contoh: 07:00, 14:30"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textSize="14sp"
+        android:textColor="#0F172A"
+        android:inputType="time"
+        android:layout_marginBottom="16dp"
+        android:maxLines="1" />
+
+    <!-- Input Lokasi -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lokasi"
+        android:textSize="14sp"
+        android:textColor="#0F172A"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/etRuang"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@drawable/bg_input_field"
+        android:hint="Contoh: Ruang 1, Kantor, Rumah"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textSize="14sp"
+        android:textColor="#0F172A"
+        android:inputType="text"
+        android:layout_marginBottom="24dp"
+        android:maxLines="1" />
+
+    <!-- Pilih Warna Badge -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pilih Warna"
+        android:textSize="14sp"
+        android:textColor="#0F172A"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginBottom="12dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="24dp">
+
+        <ImageView
+            android:id="@+id/colorBlue"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_time_blue"
+            android:foreground="@drawable/bg_color_circle"
+            android:layout_marginEnd="12dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <ImageView
+            android:id="@+id/colorPurple"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_time_purple"
+            android:foreground="@drawable/bg_color_circle"
+            android:layout_marginEnd="12dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <ImageView
+            android:id="@+id/colorGreen"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_time_green"
+            android:foreground="@drawable/bg_color_circle"
+            android:layout_marginEnd="12dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <ImageView
+            android:id="@+id/colorOrange"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_time_orange"
+            android:foreground="@drawable/bg_color_circle"
+            android:layout_marginEnd="12dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <ImageView
+            android:id="@+id/colorPink"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_time_pink"
+            android:foreground="@drawable/bg_color_circle"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+    <!-- Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnBatal"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="Batal"
+            android:textSize="14sp"
+            android:textColor="#64748B"
+            android:backgroundTint="#F1F5F9"
+            app:cornerRadius="12dp" />
+
+        <Button
+            android:id="@+id/btnSimpan"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="Simpan"
+            android:textSize="14sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#3B82F6"
+            app:cornerRadius="12dp" />
+    </LinearLayout>
+
+</LinearLayout>

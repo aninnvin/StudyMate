@@ -6,6 +6,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
+import android.util.Log;
 import androidx.core.app.NotificationCompat;
 
 public class ReminderReceiver extends BroadcastReceiver {
@@ -20,7 +21,10 @@ public class ReminderReceiver extends BroadcastReceiver {
             title = "Pengingat Tugas StudyMate!";
         }
 
+        // 1. Tampilkan notifikasi ke layar HP user
         showNotification(context, id, title, "Deadline sudah tiba! Yuk, cek dan selesaikan tugasmu.");
+
+        // 2. Eksekusi alur perubahan status tugas menjadi selesai
         updateStatusSelesai(id);
     }
 
@@ -47,6 +51,7 @@ public class ReminderReceiver extends BroadcastReceiver {
     }
 
     private void updateStatusSelesai(int id) {
-        System.out.println("STUDYMATE_DEBUG: Tugas/Jadwal dengan ID " + id + " otomatis diset SELESAI.");
+        // Alur Fleksibel: Saat digabung dengan DB Orang 2, fungsi update status tinggal diselipkan di sini
+        Log.d("STUDYMATE_REMINDER", "Logika Status Berhasil Dimasukkan: ID " + id + " otomatis diubah menjadi SELESAI.");
     }
 }

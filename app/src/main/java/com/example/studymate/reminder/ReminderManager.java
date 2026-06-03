@@ -23,17 +23,17 @@ public class ReminderManager {
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, id, intent, flags);
 
         if (alarmManager != null) {
-            // Ditambahkan try-catch untuk membungkus aturan keamanan Android terbaru
             try {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    // Berjalan akurat tanpa memicu crash aturan canScheduleExactAlarms
                     alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, targetTimeInMs, pendingIntent);
                 } else {
                     alarmManager.setExact(AlarmManager.RTC_WAKEUP, targetTimeInMs, pendingIntent);
                 }
             } catch (SecurityException e) {
-                // Jika izin sistem ditolak/belum aktif, gunakan fallback alur biasa agar tidak crash
+                // Solusi otomatis jika sistem Android menolak izin presisi, langsung dialihkan ke alarm standar
                 alarmManager.set(AlarmManager.RTC_WAKEUP, targetTimeInMs, pendingIntent);
-                Log.e("ReminderManager", "Izin exact alarm belum diberikan, dialihkan ke alarm biasa.", e);
+                Log.e("ReminderManager", "Izin exact ditolak. Menggunakan fallback alarm standar.", e);
             }
         }
     }
